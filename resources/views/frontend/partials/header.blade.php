@@ -3,7 +3,7 @@
 <head>
     <meta charset="utf-8">
     <meta http-equiv="x-ua-compatible" content="ie=edge">
-    <title>Aika - Courier service app</title>
+    <title>@isset($title) {{ $title }} - Aika - Courier service app @else Aika - Courier service app @endisset</title>
     <meta name="description" content="Aika is a courier service app">
     <meta name="viewport" content="width=device-width, initial-scale=1">
 
@@ -15,7 +15,8 @@
     <link rel="shortcut icon" href="favicon.ico" type="image/x-icon">
 
     <!-- Stylesheet -->
-    <link rel="stylesheet" href="{{ asset('assets/css/main.min3661.css?v=2.0') }}">
+    <link rel="stylesheet" href="{{ asset('assets/css/main.min.css?v=2.0') }}">
+    <link rel="stylesheet" href="{{ asset('assets/css/custom.css') }}">
 </head>
 <body>
 <!--[if lte IE 9]>
