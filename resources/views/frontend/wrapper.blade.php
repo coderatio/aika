@@ -1,10 +1,8 @@
 {{-- Attach our header --}}
-@include("frontend.partials.header")
+@includeIf("frontend.partials.header")
 
 {{-- Dynamic body view file --}}
-@isset($body)
-    @include($body)
-@endisset
+@includeIf($body)
 
 {{-- Attach our footer --}}
-@include("frontend.partials.footer")
+@includeIf("frontend.partials.footer")
