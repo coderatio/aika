@@ -14,5 +14,3 @@
 use Illuminate\Support\Facades\Route;
 
 Route::get('/', 'Fronts\HomeController@index');
-
-Route::get('login', 'Auths\LoginController@showForm');

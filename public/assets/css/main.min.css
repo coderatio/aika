@@ -1,11 +1,11 @@
 /*!
- * Dashboard UI Kit - v2.0
- * Copyright 2018 ZawiaStudio
- * @zawiastudio | zawiastudio.com 
+ * Aika UI - v0.01
+ * Copyright 2018 Josiah Ovye Yahaya
+ * @josiahoyahaya | valuebeam.com.ng/josiah/
  */
 
 html {
-    font-family: Source Sans Pro, sans-serif;
+    font-family: 'Proxima Nova', sans-serif;
     font-size: 16px;
     line-height: 1.5;
     -webkit-text-size-adjust: 100%;
@@ -29,7 +29,7 @@ input,
 optgroup,
 select,
 textarea {
-    font-family: Source Sans Pro, sans-serif
+    font-family: 'Proxima Nova', sans-serif
 }
 
 blockquote,

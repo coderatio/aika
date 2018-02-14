@@ -14,14 +14,22 @@
     <link rel="apple-touch-icon" href="apple-touch-icon.png">
     <link rel="shortcut icon" href="favicon.ico" type="image/x-icon">
 
-    <!-- Stylesheet -->
-    <link rel="stylesheet" href="{{ asset('assets/css/main.min.css?v=2.0') }}">
-    <link rel="stylesheet" href="{{ asset('assets/css/custom.css') }}">
+    @includeIf('partials.styles-fonts')
 </head>
 <body class="o-page o-page--center">
 <!--[if lte IE 9]>
 <p class="browserupgrade">You are using an <strong>outdated</strong> browser. Please <a href="http://browsehappy.com/">upgrade your browser</a> to improve your experience and security.</p>
 <![endif]-->
+
+<div class="container">
+    <div class="row justify-content-center">
+        <div class="col-lg-5" style="top: 0; position: fixed; z-index: 2">
+            @if(session()->exists('notice'))
+                {!! session('notice') !!}
+            @endif
+        </div>
+    </div>
+</div>
 
 <div class="o-page__card">
     <div class="c-card u-mb-xsmall">
@@ -32,40 +40,51 @@
             <h1 class="u-h3 u-text-center u-mb-zero">Please login</h1>
         </header>
 
-        <form class="c-card__body">
+        <form action="" method="post" class="c-card__body">
+            {{ csrf_field() }}
             <div class="c-field u-mb-small">
-                <label class="c-field__label" for="input1">Email or phone number</label>
-                <input class="c-input" type="email" id="input1" placeholder="Email, phone">
+                <label class="c-field__label" for="email_or_phone">Email or phone number</label>
+                <input class="c-input" type="text" id="email_or_phone" placeholder="Email, phone">
             </div>
 
             <div class="c-field u-mb-small">
-                <label class="c-field__label" for="input2">Password</label>
-                <input class="c-input" type="password" id="input2" placeholder="Numbers, Letters...">
+                <label class="c-field__label" for="password">Password</label>
+                <input class="c-input" type="password" id="password" placeholder="Numbers, Letters...">
             </div>
 
-            <button class="c-btn c-btn--primary c-btn--fullwidth" type="submit">Sign in to Account</button>
+            <button class="c-btn c-btn--primary c-btn--fullwidth c-btn--large" type="submit">Sign in to Account</button>
 
             <span class="c-divider c-divider--small has-text u-mv-medium">Login via social networks</span>
-
-            <div class="o-line">
-                <a class="c-icon u-bg-twitter" href="#!">
-                    <i class="fa fa-twitter"></i>
-                </a>
-
-                <a class="c-icon u-bg-pinterest" href="#!">
-                    <i class="fa fa-google-plus"></i>
-                </a>
-
-                <a class="c-icon u-bg-facebook" href="#!">
-                    <i class="fa fa-facebook"></i>
-                </a>
-            </div>
         </form>
+        <div class="c-card__body" style="margin-top: -35px">
+            <div class="o-line">
+                <form action="{{ url('login/twitter') }}" method="post">
+                    {{ csrf_field() }}
+                    <button type="submit" class="c-btn c-icon u-bg-twitter">
+                        <i class="fa fa-twitter"></i>
+                    </button>
+                </form>
+
+                <form action="{{ url('login/google') }}" method="post">
+                    {{ csrf_field() }}
+                    <button type="submit" class="c-btn c-icon u-bg-pinterest" href="#!">
+                        <i class="fa fa-google-plus"></i>
+                    </button>
+                </form>
+
+                <form action="{{ url('login/facebook') }}" method="post">
+                    {{ csrf_field() }}
+                    <button type="submit" class="c-btn c-icon u-bg-facebook" href="#!">
+                        <i class="fa fa-facebook"></i>
+                    </button>
+                </form>
+            </div>
+        </div>
     </div>
 
     <div class="o-line">
-        <a class="u-text-mute u-text-small" href="register.html">Don’t have an account yet? Get Started</a>
-        <a class="u-text-mute u-text-small" href="forgot-password.html">Forgot Password?</a>
+        <a class="u-text-mute u-text-small" href="{{ url('register') }}">Don’t have an account yet? Get Started</a>
+        <a class="u-text-mute u-text-small" href="{{ url('recover-password') }}">Forgot Password?</a>
     </div>
 </div>
 

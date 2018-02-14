@@ -1,28 +1,21 @@
-<!doctype html>
-<html lang="en-us">
-<head>
-    <meta charset="utf-8">
-    <meta http-equiv="x-ua-compatible" content="ie=edge">
-    <title>@isset($title) {{ $title }} - Aika - Courier service app @else Aika - Courier service app @endisset</title>
-    <meta name="description" content="Aika is a courier service app">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
+@includeIf('partials.head')
 
-    <!-- Google Font -->
-    {{--<link href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:400,400i,600" rel="stylesheet">--}}
-
-    <!-- Favicon -->
-    <link rel="apple-touch-icon" href="apple-touch-icon.png">
-    <link rel="shortcut icon" href="favicon.ico" type="image/x-icon">
-
-    <!-- Stylesheet -->
-    <link rel="stylesheet" href="{{ asset('assets/css/main.min.css?v=2.0') }}">
-    <link rel="stylesheet" href="{{ asset('assets/css/custom.css') }}">
-</head>
 <body>
 <!--[if lte IE 9]>
 <p class="browserupgrade">You are using an <strong>outdated</strong> browser. Please <a href="http://browsehappy.com/">upgrade your browser</a> to improve your experience and security.</p>
 <![endif]-->
 
+<div class="container">
+    <div class="row justify-content-center">
+        <div class="col-lg-5" style="top: 0; position: fixed; z-index: 2">
+            @if(session()->exists('notice'))
+                {!! session('notice') !!}
+            @endif
+        </div>
+    </div>
+</div>
+
+@if(!isset($only_body) || isset($only_body) && $only_body != true)
 <header class="c-navbar">
     <a class="c-navbar__brand" href="#!">
         <img src="{{ asset('assets/img/logo.png') }}" alt="Aika's Logo">
@@ -66,7 +59,7 @@
 
     <div class="c-dropdown dropdown">
         <a  class="c-avatar c-avatar--xsmall has-dropdown dropdown-toggle" href="#" id="dropdwonMenuAvatar" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-            <img class="c-avatar__img" src="img/avatar-72.jpg" alt="User's Profile Picture">
+            <img class="c-avatar__img" src="{{ asset('assets/img/avatar-72.jpg') }}" alt="User's Profile Picture">
         </a>
 
         <div class="c-dropdown__menu dropdown-menu dropdown-menu-right" aria-labelledby="dropdwonMenuAvatar">
@@ -82,3 +75,5 @@
         <span class="c-nav-toggle__bar"></span>
     </button><!-- // .c-nav-toggle -->
 </header>
+
+@endif

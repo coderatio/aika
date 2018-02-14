@@ -17,7 +17,7 @@
                 <h4 class="u-h6 u-text-bold u-mb-small">
                     Check your performance. See the results of all your active campaings.
                 </h4>
-                <a class="c-btn c-btn--info" href="#">Start new Campaign</a>
+                <a class="c-btn c-btn--primary" href="#">Start new Campaign</a>
             </div>
         </div>
 
@@ -29,7 +29,7 @@
                 <h4 class="u-h6 u-text-bold u-mb-small">
                     Start console and prepare new stuff for your customers or community!
                 </h4>
-                <a class="c-btn c-btn--info" href="#">View your reports</a>
+                <a class="c-btn c-btn--primary" href="#">View your reports</a>
             </div>
         </div>
 
@@ -41,7 +41,7 @@
                 <h4 class="u-h6 u-text-bold u-mb-small">
                     All Files ready? <br>Start promoting your apps today.
                 </h4>
-                <a class="c-btn c-btn--info" href="#">Start using Dashboar</a>
+                <a class="c-btn c-btn--primary" href="#">Start using Dashboar</a>
             </div>
         </div>
     </div>
