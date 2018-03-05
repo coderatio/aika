@@ -1,8 +1,10 @@
-<!doctype html>
-<html lang="en-us">
+<!DOCTYPE html>
+<html lang="{{ app()->getLocale() }}">
 <head>
-    <meta charset="utf-8">
-    <meta http-equiv="x-ua-compatible" content="ie=edge">
+    <meta http-equiv="content-type" content="text/html;charset=UTF-8" />
+    <meta charset="utf-8" />
+    <!-- CSRF Token -->
+    <meta name="csrf-token" content="{{ csrf_token() }}">
     <title>@isset($title) {{ $title }} - Aika - Courier service app @else Aika - Courier service app @endisset</title>
     <meta name="description" content="Aika is a courier service app">
     <meta name="viewport" content="width=device-width, initial-scale=1">

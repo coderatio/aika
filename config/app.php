@@ -13,7 +13,7 @@ return [
     |
     */
 
-    'name' => env('APP_NAME', 'Laravel'),
+    'name' => env('APP_NAME', 'Aika'),
 
     /*
     |--------------------------------------------------------------------------
@@ -160,6 +160,21 @@ return [
         App\Providers\EventServiceProvider::class,
         App\Providers\RouteServiceProvider::class,
 
+        /**
+         * Facebook sdk
+         */
+        SammyK\LaravelFacebookSdk\LaravelFacebookSdkServiceProvider::class,
+
+        /**
+         * Curl
+         */
+        Ixudra\Curl\CurlServiceProvider::class,
+
+        // Aika
+        \App\Providers\Aika\UserServiceProvider::class,
+        \App\Providers\Aika\AlertServiceProvider::class,
+        Coderatio\Laranotify\LaranotifyServiceProvider::class,
+
     ],
 
     /*
@@ -209,6 +224,17 @@ return [
         'Validator' => Illuminate\Support\Facades\Validator::class,
         'View' => Illuminate\Support\Facades\View::class,
 
+        /**
+         * Facebook sdk
+         */
+        'Facebook' => SammyK\LaravelFacebookSdk\FacebookFacade::class,
+
+        /**
+         * Curl
+         */
+        'Curl' => Ixudra\Curl\CurlServiceProvider::class,
+        'Notify' => Coderatio\Laranotify\Facades\Notify::class,
+        'Laranotify' => Coderatio\Laranotify\Facades\Laranotify::class,
     ],
 
 ];

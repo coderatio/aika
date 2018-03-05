@@ -2,7 +2,7 @@
     <div class="row">
         <div class="col-sm-12">
             <div class="u-mv-large u-text-center">
-                <h2 class="u-mb-xsmall">Hi Jessica! Welcome back to the Dashboard.</h2>
+                <h2 class="u-mb-xsmall">Aika is courier service app for travellers & senders</h2>
                 <p class="u-text-mute u-h6">Check out your past searches and the content you’ve browsed in. <a href="#">View last results</a></p>
             </div>
         </div>

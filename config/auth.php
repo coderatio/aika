@@ -45,6 +45,10 @@ return [
             'driver' => 'token',
             'provider' => 'users',
         ],
+        'socialite' => [
+            'driver' => 'session',
+            'provider' => 'socialites'
+        ]
     ],
 
     /*
@@ -68,6 +72,11 @@ return [
         'users' => [
             'driver' => 'eloquent',
             'model' => App\User::class,
+        ],
+
+        'socialites' => [
+            'driver' => 'eloquent',
+            'model' => \App\Models\Auths\SocialiteUser::class,
         ],
 
         // 'users' => [
