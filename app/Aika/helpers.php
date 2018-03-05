@@ -36,7 +36,7 @@ if (!function_exists('add_scripts'))
             }
         }
         elseif ($viewsDir) {
-            $gen .= "<script type='text/javascript' src='" . url("resouces/views/{$viewsDir}.js" . $ver) . "'></script>";
+            $gen .= "<script type='text/javascript' src='" . url("resources/views/{$viewsDir}.js" . $ver) . "'></script>";
         }
 
         if (isset($path['public']) && is_array($path['public'])) {
@@ -190,6 +190,35 @@ if (!function_exists('post')) {
     function post($index)
     {
         return isset($_POST[$index]) ? trim($_POST[$index]) : null;
+    }
+}
+
+/**
+ * @param string $from
+ * @return \App\Aika\Configs\SMSConfig\SMSConfig
+ */
+function aikasms($from = '') {
+    $instance = new \App\Aika\Configs\SMSConfig\SMSConfig();
+    if ($from != '') {
+        $instance->from($from);
+    }
+
+    return $instance;
+}
+
+if (!function_exists('auths')) {
+    function auths() {
+        $socialAuth = \Illuminate\Support\Facades\Auth::guard('socialite');
+        $userAuth = \Illuminate\Support\Facades\Auth::guard('web');
+
+        if ($socialAuth->check()) {
+            return $socialAuth;
+        }
+        if ($userAuth->check()) {
+            return $userAuth;
+        }
+
+        return auth();
     }
 }
 

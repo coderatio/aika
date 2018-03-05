@@ -2,6 +2,7 @@
 
 namespace App\Models\Auths;
 
+use App\User;
 use Illuminate\Database\Eloquent\Model;
 
 class UserVerifications extends Model
@@ -10,6 +11,11 @@ class UserVerifications extends Model
     protected $fillable = [
       'user_id', 'phone', 'email', 'code', 'token', 'expired_at'
     ];
+
+    public function user()
+    {
+        return $this->belongsTo(User::class);
+    }
 
     static function createOrUpdate(array $data)
     {
@@ -30,7 +36,7 @@ class UserVerifications extends Model
 
     static function getByUserId($userId)
     {
-        return parent::whereId($userId)->first();
+        return parent::whereUserId($userId)->first();
     }
 
     static function getByToken($token)
